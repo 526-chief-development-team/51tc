@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>BootStrap Table使用</title>
+    <!--@*1、Jquery组件引用*@-->
+    <script src="../static/vendor/jquery/jquery.js"></script>
+
+    <!--@*2、bootstrap组件引用*@-->
+   <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+    <!--@*3、bootstrap table组件以及中文包的引用*@-->
+    <script src="../static/vendor/bootstrap-table/bootstrap-table.js"></script>
+    <link href="../static/vendor/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <script src="../static/vendor/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+</head>
+<body>
+{#     推荐用这种方式，比较灵活#}
+<div style="width: 80%;margin: 0 auto">
+    <table id="table" ></table>
+</div>
+{#     1.先定义一个空表#}
+{#     2.用js初始化表，并填充数据#}
+<script type="text/javascript">
+    $(function () {
+        $('#table').bootstrapTable({
+            url: '/jsondatabeijing',  // 请求数据源的路由
+            dataType: "json",
+            pagination: true, //前端处理分页
+            singleSelect: false,//是否只能单选
+            search: true, //显示搜索框，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
+            toolbar: '#toolbar', //工具按钮用哪个容器
+            striped: true, //是否显示行间隔色
+            cache: false, //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+            pageNumber: 1, //初始化加载第10页，默认第一页
+            pageSize: 10, //每页的记录行数（*）
+            pageList: [10, 20, 50, 100], //可供选择的每页的行数（*）
+            strictSearch: false,//设置为 true启用 全匹配搜索，false为模糊搜索
+            showColumns: true, //显示内容列下拉框
+            showRefresh: true, //显示刷新按钮
+            minimumCountColumns: 2, //当列数小于此值时，将隐藏内容列下拉框
+            clickToSelect: true, //设置true， 将在点击某行时，自动勾选rediobox 和 checkbox
+            {#        height: 500, //表格高度，如果没有设置height属性，表格自动根据记录条数决定表格高度#}
+            uniqueId: "id", //每一行的唯一标识，一般为主键列
+            showToggle: true, //是否显示详细视图和列表视图的切换按钮
+            cardView: false, //是否显示详细视图
+            {#        detailView: true, //是否显示父子表，设置为 true 可以显示详细页面模式,在每行最前边显示+号#}
+            sidePagination: "server", //分页方式：client客户端分页，server服务端分页（*）
+            columns: [{  //定义表头,这个表头必须定义,下边field后边跟的字段名字必须与后端传递的字段名字相同.如:id、name、price跟 后端的字段名id  name price是完全一样的.
+                field: 'id',
+                title: '序号',
+                align: 'center',  //对齐方式，居中
+{#              width: '200px'  // 可以写各种样式#}
+            }, {
+                field: 'jobname',
+                title: '工作名称',
+                align: 'center'
+            }, {
+                field: 'companyname',
+                title: '公司名称',
+                align: 'center',
+
+            }, {
+                title: '薪资水平',
+                field: 'salary',
+                align: 'center',
+                width: "120px"
+            }, {
+                field: 'jobwelf',
+                title: '工作福利',
+                align: 'center'
+            }, {
+                field: 'workrequest',
+                title: '工作要求',
+                align: 'center',
+            }, {
+                field: 'workplace',
+                title: '工作地点',
+                align: 'center',
+            }, {
+                field: 'workminimumDegree',
+                title: '工作最低学历',
+                align: 'center',
+            }, {
+                field: 'workrecruiternum',
+                title: '最低招聘人数',
+                align: 'center',
+            }, {
+                title: '操作',
+                field: 'id',
+                align: 'center',
+                width:"50px",
+                formatter: function (value, row, index) {
+                    var e = '<a href="#" mce_href="#" onclick="edit(\'' + row.id + '\')">编辑</a> ';  //row.id为每行的id
+                    var d = '<a href="#" mce_href="#" onclick="del(\'' + row.id + '\')">删除</a> ';
+                    return e + d;
+                }
+
+            }
+            ],
+        });
+    });
+
+
+</script>
+</body>
+
+</html>
+

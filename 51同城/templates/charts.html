@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bootstrap Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="../static/vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="../static/css/fontastic.css">
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="../static/https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- jQuery Circle-->
+    <link rel="stylesheet" href="../static/css/grasp_mobile_progress_circle-1.0.0.min.css">
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="../static/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="../static/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="../static/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="../static/img/favicon.ico">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <!-- Side Navbar -->
+    <nav class="side-navbar">
+      <div class="side-navbar-wrapper">
+        <!-- Sidebar Header    -->
+        <div class="sidenav-header d-flex align-items-center justify-content-center">
+          <!-- User Info-->
+          <div class="sidenav-header-inner text-center"><img src="../static/img/avatar-7.jpg" alt="person" class="img-fluid rounded-circle">
+            <h2 class="h5">Nathan Andrews</h2><span>Web Developer</span>
+          </div>
+          <!-- Small Brand information, appears on minimized sidebar-->
+          <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
+        </div>
+        <!-- Sidebar Navigation Menus-->
+        <div class="main-menu">
+          <h5 class="sidenav-heading">主栏</h5>
+          <div id="side-main-menu" class="side-menu list-unstyled">
+            <li><a href="index.html"> <i class="icon-home"></i>主页                             </a></li>
+            <li><a href="forms.html"> <i class="icon-form"></i>表单                             </a></li>
+            <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>图表                          </a></li>
+            <li><a href="tables.html"> <i class="icon-grid"></i>表格                             </a></li>
+            <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>额外的模块</a>
+              <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                <li><a href="chengdu.html">表格-成都</a></li>
+                <li><a href="shanghai.html">表格-上海</a></li>
+                <li><a href="beijing.html">表格-北京</a></li>
+              </ul>
+            </li>
+              <li><a href="/"> <i class="icon-interface-windows"></i>登陆页面                             </a></li>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="page">
+      <!-- navbar-->
+      <header class="header">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+              <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="index.html" class="navbar-brand">
+                  <div class="brand-text d-none d-md-inline-block"><span></span><strong class="text-primary">分类主页</strong></div></a></div>
+              <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                <!-- Notifications dropdown-->
+                <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell"></i><span class="badge badge-warning">12</span></a>
+                  <ul aria-labelledby="notifications" class="dropdown-menu">
+                    <li><a rel="nofollow" href="#" class="dropdown-item">
+                        <div class="notification d-flex justify-content-between">
+                          <div class="notification-content"><i class="fa fa-envelope"></i>You have 6 new messages </div>
+                          <div class="notification-time"><small>4 minutes ago</small></div>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item">
+                        <div class="notification d-flex justify-content-between">
+                          <div class="notification-content"><i class="fa fa-twitter"></i>You have 2 followers</div>
+                          <div class="notification-time"><small>4 minutes ago</small></div>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item">
+                        <div class="notification d-flex justify-content-between">
+                          <div class="notification-content"><i class="fa fa-upload"></i>Server Rebooted</div>
+                          <div class="notification-time"><small>4 minutes ago</small></div>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item">
+                        <div class="notification d-flex justify-content-between">
+                          <div class="notification-content"><i class="fa fa-twitter"></i>You have 2 followers</div>
+                          <div class="notification-time"><small>10 minutes ago</small></div>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-bell"></i>view all notifications                                            </strong></a></li>
+                  </ul>
+                </li>
+                <!-- Messages dropdown-->
+                <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope"></i><span class="badge badge-info">10</span></a>
+                  <ul aria-labelledby="notifications" class="dropdown-menu">
+                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
+                        <div class="msg-profile"> <img src="/static/img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="msg-body">
+                          <h3 class="h5">Jason Doe</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2019</small>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
+                        <div class="msg-profile"> <img src="/static/img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="msg-body">
+                          <h3 class="h5">Frank Williams</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2019</small>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
+                        <div class="msg-profile"> <img src="/static/img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="msg-body">
+                          <h3 class="h5">Ashley Wood</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2019</small>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-envelope"></i>Read all messages    </strong></a></li>
+                  </ul>
+                </li>
+                <!-- Log out-->
+                <li class="nav-item"><a href="/" class="nav-link logout"> <span class="d-none d-sm-inline-block">退出</span><i class="fa fa-sign-out"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- Breadcrumb-->
+      <div class="breadcrumb-holder">
+        <div class="container-fluid">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active">Charts       </li>
+          </ul>
+        </div>
+      </div>
+      <section class="charts">
+        <div class="container-fluid">
+          <!-- Page Header-->
+          <header>
+            <h1 class="h3 display">数据分析       </h1>
+          </header>
+          <div class="row">
+            <!--成都“前端”岗位薪资比例-->
+            <div style="width: 100%;height: 100%" align="center">
+              <div class="card line-chart-example">
+                <div class="card-body" style="width:1000px;height:500px">
+                  <div id="MyPieChart1" style="height: 100%"></div>
+                </div>
+              </div>
+            </div>
+            <!--上海“前端”岗位薪资比例-->
+            <div style="width: 100%;height: 100%" align="center">
+              <div class="card line-chart-example">
+                <div class="card-body" style="width:1000px;height:500px">
+                  <div id="MyPieChart2" style="height: 100%"></div>
+                </div>
+              </div>
+            </div>
+            <!--北京“前端”岗位薪资比例-->
+            <div style="width: 100%;height: 100%" align="center">
+              <div class="card line-chart-example">
+                <div class="card-body" style="width:1000px;height:500px">
+                  <div id="MyPieChart3" style="height: 100%"></div>
+                </div>
+              </div>
+            </div>
+            <!--薪资比较-->
+            <div style="width: 100%;height: 100%" align="center">
+              <div class="card line-chart-example">
+                <div class="card-body" style="width:1000px;height:500px">
+                  <div id="Charts4" style="height: 100%"></div>
+                </div>
+              </div>
+            </div>
+            <!--Web最常用的技术-->
+            <div style="width: 100%;height: 100%" align="center">
+              <div class="card bar-chart-example">
+                <div class="card-body" style="width:1000px;height:500px">
+                  <div id="UsualTech" style="height: 100%"></div>
+                </div>
+              </div>
+            </div>
+<!--            <div class="col-lg-6">-->
+<!--              <div class="card pie-chart-example">-->
+<!--                <div class="card-header d-flex align-items-center">-->
+<!--                  <h4>Pie Chart Example</h4>-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                  <div class="chart-container">-->
+<!--                    <canvas id="pieChartExample"></canvas>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-6">-->
+<!--              <div class="card polar-chart-example">-->
+<!--                <div class="card-header d-flex align-items-center">-->
+<!--                  <h4>Ploar Chart Example</h4>-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                  <div class="chart-container">-->
+<!--                    <canvas id="polarChartExample"></canvas>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+
+    <!-- JavaScript files-->
+    <script src="../static/vendor/jquery/jquery.min.js"></script>
+    <script src="../static/vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
+    <script src="../static/vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="../static/vendor/chart.js/Chart.min.js"></script>
+    <script src="../static/vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="../static/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../static/js/charts-custom.js"></script>
+    <script type="text/javascript" src="../static/js/echarts.min.js"></script>
+    <!-- Main File-->
+    <script src="../static/js/front.js"></script>
+
+    <script type="text/javascript">
+            var dom = document.getElementById("MyPieChart1");
+var myChart = echarts.init(dom);
+var app = {};
+var option;
+var numb= {{ datalist }}
+option = {
+    title: {
+        text: '成都市“前端”岗位薪资比例',
+        subtext: '仅供参考',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+    },
+    series: [
+        {
+            name: '访问来源',
+            type: 'pie',
+            radius: '50%',
+            data: [{value:numb[0], name:'6k以下'},
+                    {value:numb[1], name:'6k-10k'},
+                    {value:numb[2], name:'10k-15k'},
+                    {value:numb[3], name:'15k-20k'},
+                    {value:numb[4], name:'20k以上'},
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+        </script> <!--成都“前端”岗位薪资比例-->
+    <script type="text/javascript">
+            var dom = document.getElementById("MyPieChart2");
+var myChart = echarts.init(dom);
+var app = {};
+var option;
+var numb= {{ datalist1 }}
+option = {
+    title: {
+        text: '上海市“前端”岗位薪资比例',
+        subtext: '仅供参考',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+    },
+    series: [
+        {
+            name: '访问来源',
+            type: 'pie',
+            radius: '50%',
+            data: [{value:numb[0], name:'6k以下'},
+                    {value:numb[1], name:'6k-10k'},
+                    {value:numb[2], name:'10k-15k'},
+                    {value:numb[3], name:'15k-20k'},
+                    {value:numb[4], name:'20k以上'},
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+        </script> <!--上海“前端”岗位薪资比例-->
+    <script type="text/javascript">
+            var dom = document.getElementById("MyPieChart3");
+var myChart = echarts.init(dom);
+var app = {};
+var option;
+var numb= {{ datalist2 }}
+option = {
+    title: {
+        text: '北京市“前端”岗位薪资比例',
+        subtext: '仅供参考',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+    },
+    series: [
+        {
+            name: '访问来源',
+            type: 'pie',
+            radius: '50%',
+            data: [{value:numb[0], name:'6k以下'},
+                    {value:numb[1], name:'6k-10k'},
+                    {value:numb[2], name:'10k-15k'},
+                    {value:numb[3], name:'15k-20k'},
+                    {value:numb[4], name:'20k以上'},
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+        </script> <!--北京“前端”岗位薪资比例-->
+    <script type="text/javascript">
+var dom = document.getElementById("Charts4");
+var myChart = echarts.init(dom);
+var app = {};
+var numb= {{ datalist }};     //成都
+var numb1= {{ datalist1 }};   //上海
+var numb2= {{ datalist2 }};   //北京
+var option;
+
+
+
+var posList = [
+    'left', 'right', 'top', 'bottom',
+    'inside',
+    'insideTop', 'insideLeft', 'insideRight', 'insideBottom',
+    'insideTopLeft', 'insideTopRight', 'insideBottomLeft', 'insideBottomRight'
+];
+
+app.configParameters = {
+    rotate: {
+        min: -90,
+        max: 90
+    },
+    align: {
+        options: {
+            left: 'left',
+            center: 'center',
+            right: 'right'
+        }
+    },
+    verticalAlign: {
+        options: {
+            top: 'top',
+            middle: 'middle',
+            bottom: 'bottom'
+        }
+    },
+    position: {
+        options: posList.reduce(function (map, pos) {
+            map[pos] = pos;
+            return map;
+        }, {})
+    },
+    distance: {
+        min: 0,
+        max: 100
+    }
+};
+
+app.config = {
+    rotate: 90,
+    align: 'left',
+    verticalAlign: 'middle',
+    position: 'insideBottom',
+    distance: 15,
+    onChange: function () {
+        var labelOption = {
+            normal: {
+                rotate: app.config.rotate,
+                align: app.config.align,
+                verticalAlign: app.config.verticalAlign,
+                position: app.config.position,
+                distance: app.config.distance
+            }
+        };
+        myChart.setOption({
+            series: [{
+                label: labelOption
+            }, {
+                label: labelOption
+            }, {
+                label: labelOption
+            }, {
+                label: labelOption
+            }]
+        });
+    }
+};
+
+
+var labelOption = {
+    show: true,
+    position: app.config.position,
+    distance: app.config.distance,
+    align: app.config.align,
+    verticalAlign: app.config.verticalAlign,
+    rotate: app.config.rotate,
+    formatter: '{c}  {name|{a}}',
+    fontSize: 16,
+    rich: {
+        name: {
+        }
+    }
+};
+
+option = {
+    title: {
+        text: '成都、上海、北京三地“前端”岗位薪资段位对比',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['成都', '上海', '北京'],
+        left: 'right'
+    },
+    toolbox: {
+        show: true,
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        feature: {
+            mark: {show: true},
+            dataView: {show: true, readOnly: false},
+            magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+            restore: {show: true},
+            saveAsImage: {show: true}
+        }
+    },
+    xAxis: [
+        {
+            type: 'category',
+            axisTick: {show: false},
+            data: ['6k以下', '6k-10k', '10k-15k', '15k-20k','20k以上']
+        }
+    ],
+    yAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    series: [
+        {
+            name: '成都',
+            type: 'bar',
+            barGap: 0,
+            label: labelOption,
+            emphasis: {
+                focus: 'series'
+            },
+            data: [numb[0], numb[1], numb[2], numb[3],numb[4]]
+        },
+        {
+            name: '上海',
+            type: 'bar',
+            label: labelOption,
+            emphasis: {
+                focus: 'series'
+            },
+            data: [numb1[0], numb1[1], numb1[2], numb1[3],numb1[4]]
+        },
+        {
+            name: '北京',
+            type: 'bar',
+            label: labelOption,
+            emphasis: {
+                focus: 'series'
+            },
+            data: [numb2[0], numb2[1], numb2[2], numb2[3],numb2[4]]
+        }
+    ]
+};
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+        </script>
+    <script type="text/javascript">
+var dom = document.getElementById("UsualTech");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+
+
+
+option = {
+    title: {
+        text: 'Web最常用的技术',
+        subtext: '数据来51job爬取数据',
+        left:'center'
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+            type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'category',
+            data: ['JavaScript', 'HTML5', 'Vue', 'CSS3', 'React', 'UI', 'jquery','ES6','Ajax','webpack'],
+            axisLabel:{
+    interval:0,//横轴信息全部显示
+    rotate:-15,//-15度角倾斜显示
+    },
+            axisTick: {
+                alignWithLabel: true
+            }
+
+        }
+    ],
+    yAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    series: [
+        {
+            name: '直接访问',
+            type: 'bar',
+            barWidth: '60%',
+            data: [2423,1915,1660,1643,830,568,508,386,340,292]
+        }
+    ],
+
+};
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+        </script> <!--Web最常用的技术-->
+  </body>
+</html>
